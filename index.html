@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho de Compras</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main>
+        <section id="tela-login" class="tela">
+            <div class="login-box">
+                <h2>Acessar a Loja</h2>
+                <form onsubmit="return false;"> 
+                    <input type="text" id="usuario" placeholder="Usuário (ex: admin)" required>
+                    <input type="password" id="senha" placeholder="Senha (ex: 123)" required>
+                    <button onclick="fazerLogin()">Entrar</button>
+                    <p id="login-feedback"></p> 
+                </form>
+            </div>
+        </section>
+
+        <section id="tela-loja" class="tela" style="display:none;">
+            <header>
+                <h1> Riven's shop</h1>
+                <button onclick="fazerLogout()">Sair</button>
+            </header>
+            
+            <div class="conteudo-loja">
+                <div id="produtos-container">
+                    <h2>Produtos Disponíveis</h2>
+
+                    <!-- Campo de busca -->
+                    <input type="text" id="pesquisa" placeholder="Buscar produto..." oninput="buscarProdutos()">
+
+                    <div id="produtos-grid">
+                        </div>
+                </div>
+
+                <aside id="carrinho-container">
+                    <h2>Seu Carrinho</h2>
+                    <ul id="carrinho-lista">
+                        <li>Seu carrinho está vazio.</li>
+                    </ul>
+                    <p class="total">Total: R$ <span id="carrinho-total">0.00</span></p>
+                    <button onclick="finalizarCompra()">Finalizar Compra</button>
+                </aside>
+            </div>
+
+            <div id="resumo-pedido"></div>
+
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
